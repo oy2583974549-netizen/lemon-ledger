@@ -1,0 +1,1 @@
+{"name":"柠檬账本","short_name":"柠檬账本","description":"一款极简的个人记账应用","lang":"zh-CN","start_url":"./","scope":"./","display":"standalone","background_color":"#f8f7f3","theme_color":"#f8f7f3","icons":[{"src":"./icon-192.png","sizes":"192x192","type":"image/png","purpose":"any maskable"},{"src":"./icon-512.png","sizes":"512x512","type":"image/png","purpose":"any maskable"}]}
