@@ -156,3 +156,7 @@ html[data-background="white"] .ledger-view-switch button:not(.active){background
 html[data-background="white"] .theme-choice.active,
 html[data-background="white"] .background-choice.active,
 html[data-background="white"] .ledger-view-switch button.active{background:#fff!important;box-shadow:0 1px 7px rgba(31,28,14,.035)}
+
+/* v39: use a native single-line text field for reliable iOS editing. */
+.composer input#speech-input{border:0;outline:none!important;min-width:0;height:30px;padding:4px 5px;flex:1;background:transparent;color:var(--ink);font-size:16px;line-height:22px;-webkit-appearance:none;appearance:none}
+.composer input#speech-input::placeholder{color:#8d8c84;opacity:1}
