@@ -36,3 +36,123 @@ select{
 .composer{align-items:center;border-radius:16px;padding:5px 8px}
 .composer textarea{height:30px;min-height:30px;padding:4px 5px;line-height:22px}
 .composer .circle-btn{width:30px;height:30px}
+
+/* Interaction and original cat-themed category markers. */
+.top-eyebrow{text-transform:none}
+.summary-link{cursor:pointer;user-select:none;transition:transform .16s ease,border-color .16s ease}
+.summary-link:active{transform:scale(.985)}
+.summary-link:focus-visible{outline:2px solid #879785;outline-offset:2px}
+.avatar:has(.category-cat-icon){overflow:visible;background:transparent;border-radius:0}
+.category-cat-icon{display:block;width:38px;height:38px;background-image:url('./category-cats-v25.png');background-repeat:no-repeat;background-size:500% 400%;background-position:calc(var(--icon-x) * 25%) calc(var(--icon-y) * 33.333333%)}
+.avatar:has(.category-plain-icon){overflow:visible;background:transparent;border-radius:0}
+.category-plain-icon{display:block;width:38px;height:38px;background-image:url('./category-plain-v27.png');background-repeat:no-repeat;background-size:500% 400%;background-position:calc(var(--icon-x) * 25%) calc(var(--icon-y) * 33.333333%)}
+.avatar:has(.category-extra-icon){overflow:visible;background:transparent;border-radius:0}
+.category-extra-icon{display:block;width:38px;height:38px;background-image:url('./category-extra-v28.png');background-repeat:no-repeat;background-size:500% 200%;background-position:calc(var(--icon-x) * 25%) calc(var(--icon-y) * 100%)}
+.avatar:has(.category-line-icon){width:40px;height:40px;border-radius:50%;background:#f0f0ed;color:#252723;overflow:visible}
+.category-line-icon{width:23px;height:23px;display:block}
+.theme-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:7px}
+.theme-choice{min-width:0;border:0;border-radius:12px;background:#f6f5f1;color:var(--ink);padding:9px 5px;display:flex;flex-direction:column;align-items:center;gap:4px;position:relative}
+.theme-choice.active{background:#edf1e9;color:#344536;box-shadow:inset 0 0 0 1.5px #82917e}
+.theme-choice.active:after{content:'✓';position:absolute;right:6px;top:5px;width:15px;height:15px;border-radius:50%;display:grid;place-items:center;background:#647761;color:#fff;font-size:9px}
+.theme-choice b{font-size:11px}.theme-choice small{display:none}
+.theme-line-preview{height:31px;display:flex;align-items:center;justify-content:center;gap:2px;color:#252723}
+.theme-line-preview .category-line-icon{width:25px;height:25px;padding:4px;border-radius:50%;background:#efefec}
+.account-list .rowitem{cursor:pointer}
+.account-avatar{border-radius:50%;background:#eef1e9;color:#4e6552;font-size:13px;font-weight:700}
+.account-balance{display:flex;flex-direction:column;align-items:flex-end;gap:4px;white-space:nowrap}
+.account-balance span{font-size:9px;color:var(--muted)}
+.account-balance b{font-size:13px;font-variant-numeric:tabular-nums}
+.account-help{margin:9px 4px 0;line-height:1.7}
+.account-picker{padding-top:4px;border-top:1px solid var(--line)}
+.ledger-combined-head{margin-bottom:15px}
+.ledger-view-switch{display:flex;width:100%;margin-bottom:20px}
+.ledger-view-switch button{flex:1}
+.account-total{margin-bottom:6px}
+.theme-plain-preview,.theme-cat-preview{height:31px;display:flex;align-items:center;justify-content:center;gap:2px}
+.theme-plain-preview i,.theme-cat-preview i{display:block;width:31px;height:31px;background-repeat:no-repeat;background-size:500% 400%;background-position:calc(var(--icon-x) * 25%) calc(var(--icon-y) * 33.333333%)}
+.theme-plain-preview i{background-image:url('./category-plain-v27.png')}
+.theme-cat-preview{height:31px;display:flex;align-items:center;justify-content:center;gap:2px}
+.theme-cat-preview i{background-image:url('./category-cats-v25.png')}
+.theme-caption{display:none}
+.stats-period-control{display:flex;align-items:center;justify-content:space-between;margin:0 2px 18px;padding:9px 12px;border-bottom:1px solid var(--line);color:var(--muted);font-size:11px}
+.stats-period-control select{border:0!important;background-color:transparent!important;min-width:105px;color:var(--ink);font-size:12px;padding-top:4px!important;padding-bottom:4px!important}
+.trend-line-panel{padding:13px 12px 8px}
+.trend-line-panel svg{display:block;width:100%;height:auto;overflow:visible}.trend-line-panel text{fill:#99988e;font-size:9px}.trend-grid{fill:none;stroke:#ecece7;stroke-width:1}.trend-area{fill:#7c9175;opacity:.1}.trend-line{fill:none;stroke:#71866d;stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round}.trend-dot{fill:#fff;stroke:#71866d;stroke-width:2}
+.legend-value{border:0;background:transparent;color:var(--ink);font-size:11px;font-weight:650;padding:3px 0 3px 8px;min-width:72px;text-align:right}
+.planned-row{cursor:pointer}.planned-row:active{opacity:.65}
+.month-picker-control label{display:block}.month-picker-control input[type=month]{border:0;background:transparent;color:var(--ink);font-size:13px;font-weight:600;width:128px;text-align:center;padding:4px 0;color-scheme:light}
+.month-picker-control input[type=month]::-webkit-calendar-picker-indicator{opacity:.55;cursor:pointer}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+@media(hover:hover){.summary-link:hover{border-color:#d7dacf;transform:translateY(-1px)}}
+
+/* Keep the mobile app fixed to the device viewport. */
+html,body{width:100%;max-width:100%;overflow-x:hidden;touch-action:pan-y}
+
+/* v34 refinements: delicate chart, balanced controls, and themed account icons. */
+.trend-grid{stroke:#efefe9;stroke-width:.7}
+.trend-area{opacity:.055}
+.trend-line{stroke-width:1.35}
+.trend-dot{stroke-width:1.25}
+.stats-period-control{padding:8px 12px}
+.stats-period-control select{border:1px solid #e6e5de!important;background-color:#fff!important;border-radius:10px!important;width:112px;min-width:112px;height:36px;color:var(--ink);font-size:12px;font-weight:550;text-align:center;text-align-last:center;padding:0 34px 0 14px!important;background-position:calc(100% - 17px) center,calc(100% - 12px) center!important;box-shadow:0 3px 12px rgba(31,28,14,.025)}
+#tx-form .primary-btn.full,#tx-form .danger-btn.full{height:46px;border-radius:13px;padding:0 18px;font-size:13px;font-weight:550;display:flex;align-items:center;justify-content:center}
+.account-avatar{border-radius:50%;overflow:hidden}
+.account-icon{width:25px;height:25px;display:block}
+.account-theme-line{background:#f0f0ed;color:#252723;border:1px solid #e4e4df}
+.account-theme-plain{border:0;box-shadow:inset 0 0 0 1px #00000008}
+.account-theme-plain:has(.account-icon-alipay){background:#eaf5ff;color:#1677ff}
+.account-theme-plain:has(.account-icon-wechat){background:#e9faec;color:#07c160}
+.account-theme-plain:has(.account-icon-bank){background:#fff2eb;color:#d64c32}
+.account-theme-plain:has(.account-icon-cash){background:#fff7df;color:#b58324}
+.account-theme-plain:has(.account-icon-huabei){background:#f0edff;color:#6d5bd0}
+.account-theme-cat{background:#fff2f4;color:#b66d78;border:1px solid #f1dce0;position:relative;overflow:visible}
+.account-theme-cat:before,.account-theme-cat:after{content:"";position:absolute;top:-1px;width:10px;height:10px;background:#fff2f4;border-top:1px solid #f1dce0;transform:rotate(45deg);z-index:0}
+.account-theme-cat:before{left:6px}.account-theme-cat:after{right:6px}
+.account-theme-cat .account-icon{position:relative;z-index:1;width:23px;height:23px}
+
+/* v35: background preference, refined placement, and recognizable account branding. */
+html[data-background="white"]{--bg:#fff;--shadow:0 10px 34px rgba(31,28,14,.025)}
+html[data-background="white"] .bottom-nav{background:rgba(255,255,255,.97)}
+.stats-period-control{margin:-5px 2px 13px;padding:3px 0 10px}
+.account-avatar:has(.account-brand-icon){background:transparent!important;border:0!important;overflow:visible;box-shadow:none!important}
+.account-avatar:has(.account-brand-icon):before,.account-avatar:has(.account-brand-icon):after{display:none}
+.account-brand-icon{width:34px!important;height:34px!important}
+.background-choice-grid{display:grid;grid-template-columns:1fr 1fr;gap:9px;padding:10px}
+.background-choice{border:1px solid #e7e6df;background:#f8f7f3;border-radius:13px;padding:10px;display:flex;align-items:center;gap:9px;text-align:left;color:var(--ink);position:relative}
+.background-choice.active{border-color:#82917e;background:#edf1e9;box-shadow:inset 0 0 0 1px #82917e}
+.background-choice.active:after{content:'✓';position:absolute;right:7px;top:7px;width:15px;height:15px;border-radius:50%;display:grid;place-items:center;background:#647761;color:#fff;font-size:9px}
+.background-choice span{display:flex;flex-direction:column;gap:2px}.background-choice b{font-size:12px}.background-choice small{font-size:9px;color:var(--muted)}
+.background-swatch{width:31px;height:31px;border-radius:10px;border:1px solid #e5e4dd;box-shadow:inset 0 0 0 4px rgba(255,255,255,.55);flex:none}
+.background-swatch.warm{background:#f8f7f3}.background-swatch.white{background:#fff}
+
+/* v36: lighter settings, reliable controls, unified account marks, compact swipe action. */
+.screen>.panel:has(.theme-grid),.screen>.background-choice-grid{border:0;background:transparent;box-shadow:none;padding:0}
+.theme-grid{gap:2px;background:#f4f3ef;border-radius:14px;padding:3px}
+.theme-choice{border-radius:11px;background:transparent;padding:8px 4px}
+.theme-choice.active{background:#fff;box-shadow:0 2px 9px rgba(31,28,14,.05);color:#344536}
+.background-choice-grid{gap:2px;background:#f4f3ef!important;border-radius:14px;padding:3px!important}
+.background-choice{border:0;background:transparent;border-radius:11px;padding:9px 10px}
+.background-choice.active{border:0;background:#fff;box-shadow:0 2px 9px rgba(31,28,14,.05)}
+.account-avatar:has(.account-icon-alipay){overflow:visible!important}
+.account-theme-line:has(.account-icon-alipay){background:#f0f0ed;color:#252723;border:1px solid #e4e4df}
+.account-theme-plain:has(.account-icon-alipay){background:#eaf5ff;color:#1677ff}
+.account-theme-cat:has(.account-icon-alipay){background:#fff2f4;color:#b66d78;border:1px solid #f1dce0}
+.account-theme-cat:has(.account-icon-alipay):before,.account-theme-cat:has(.account-icon-alipay):after{display:block}
+.account-icon-alipay{width:23px!important;height:23px!important;position:relative;z-index:1}
+.swipe-item.is-open .swipe-foreground{transform:translateX(-70px)}
+.swipe-delete{right:6px;top:8px;bottom:8px;width:58px;border-radius:11px;background:rgba(183,104,92,.14);color:#a45147;font-size:11px;font-weight:600}
+@media(hover:hover){.swipe-item:hover .swipe-delete{background:rgba(183,104,92,.2)}}
+.composer,.composer textarea,.stats-period-control select{pointer-events:auto;position:relative;z-index:1}
+
+/* v37: make the white palette genuinely light and restore native text focus. */
+html,body{touch-action:auto}
+#speech-input{pointer-events:auto!important;touch-action:manipulation!important;-webkit-user-select:text!important;user-select:text!important;cursor:text;opacity:1!important}
+html[data-background="white"] .theme-grid,
+html[data-background="white"] .background-choice-grid,
+html[data-background="white"] .ledger-view-switch{background:#fbfbfa!important}
+html[data-background="white"] .theme-choice:not(.active),
+html[data-background="white"] .background-choice:not(.active),
+html[data-background="white"] .ledger-view-switch button:not(.active){background:transparent!important;color:#aaa9a1}
+html[data-background="white"] .theme-choice.active,
+html[data-background="white"] .background-choice.active,
+html[data-background="white"] .ledger-view-switch button.active{background:#fff!important;box-shadow:0 1px 7px rgba(31,28,14,.035)}
