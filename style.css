@@ -160,3 +160,42 @@ html[data-background="white"] .ledger-view-switch button.active{background:#fff!
 /* v39: use a native single-line text field for reliable iOS editing. */
 .composer input#speech-input{border:0;outline:none!important;min-width:0;height:30px;padding:4px 5px;flex:1;background:transparent;color:var(--ink);font-size:16px;line-height:22px;-webkit-appearance:none;appearance:none}
 .composer input#speech-input::placeholder{color:#8d8c84;opacity:1}
+
+/* v41: account privacy, compact modal actions and category drill-down. */
+.account-total-value{display:flex;align-items:center;justify-content:space-between;gap:14px}
+.balance-eye{border:0;background:transparent;color:#687667;width:38px;height:38px;border-radius:50%;display:grid;place-items:center;flex:none;margin-top:7px}
+.balance-eye:active{background:#f1f3ee}
+.modal form>.primary-btn.full,.modal form>.danger-btn.full{height:46px;border-radius:13px;padding:0 18px;font-size:13px;font-weight:550;display:flex;align-items:center;justify-content:center}
+.legend-category{border:0;background:transparent;color:inherit;font:inherit;padding:4px 0;display:flex;align-items:center;min-width:0;text-align:left}
+.legend-category:active{opacity:.55}
+.legend-value{flex:none}
+.category-detail-list .rowitem:first-child{padding-top:3px}
+.category-detail-shade{align-items:center;padding:24px}
+.category-detail-modal{border-radius:23px;max-height:min(72svh,620px);padding:23px;box-shadow:0 18px 70px rgba(31,28,14,.18)}
+.balance-eye svg{display:block;width:24px;height:24px}
+
+/* v43: explicit mobile voice states and confirmation. */
+.voice-feedback{min-height:28px;margin:8px auto 0;display:flex;align-items:center;justify-content:center;gap:9px;color:#99988e;font-size:11px}
+.voice-feedback[data-state="listening"]{color:#a15348;font-weight:550}
+.voice-feedback[data-state="listening"] .voice-status:before{content:"";display:inline-block;width:7px;height:7px;margin-right:6px;border-radius:50%;background:#c5675d;animation:voice-pulse 1s ease-in-out infinite}
+.voice-confirm{border:1px solid #dfe4da;background:#eef1e9;color:#435747;border-radius:20px;padding:6px 11px;font-size:11px;font-weight:600}
+.circle-btn.mic.is-listening{background:#f7ded9;color:#a54d44;box-shadow:0 0 0 5px rgba(183,104,92,.09)}
+@keyframes voice-pulse{50%{opacity:.35;transform:scale(.78)}}
+
+/* v44: prevent native iOS date controls from overflowing two-column forms. */
+.field-grid{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}
+.field-grid>*{min-width:0}
+.field-grid .form-field{min-width:0}
+.field-grid .form-field input,.field-grid .form-field select{display:block;width:100%;min-width:0;max-width:100%}
+.field-grid input[type="date"]{inline-size:100%;min-inline-size:0;max-inline-size:100%}
+@media(max-width:390px){.field-grid{gap:8px}.field-grid .form-field input,.field-grid .form-field select{padding-left:10px;padding-right:10px;font-size:13px}}
+
+/* v45: themed computer icon and a tiny lemon on the budget progress. */
+.category-computer-life{width:34px;height:34px;display:grid;place-items:center;font-size:25px;filter:saturate(.82)}
+.category-computer-cat{width:39px;height:39px;display:block;position:relative}
+.category-computer-cat>.category-cat-icon{position:absolute;inset:0;width:39px;height:39px;z-index:0}
+.category-computer-cat>i{position:absolute;right:-4px;bottom:-2px;width:27px;height:22px;display:block;background:transparent;font-style:normal;z-index:1}
+.category-computer-cat>i svg{display:block;width:100%;height:100%;filter:drop-shadow(0 1px 1px rgba(74,61,51,.1))}
+.budget-progress{position:relative;overflow:visible}
+.budget-progress span{position:relative}
+.budget-progress span:after{content:"";position:absolute;right:-13px;top:50%;width:27px;height:27px;transform:translateY(-50%);background:url('./lemon-transparent.png') center/contain no-repeat;filter:drop-shadow(0 2px 3px rgba(70,54,18,.18));z-index:2;pointer-events:none}
