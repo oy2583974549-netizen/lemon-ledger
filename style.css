@@ -176,6 +176,7 @@ html[data-background="white"] .ledger-view-switch button.active{background:#fff!
 
 /* v43: explicit mobile voice states and confirmation. */
 .voice-feedback{min-height:28px;margin:8px auto 0;display:flex;align-items:center;justify-content:center;gap:9px;color:#99988e;font-size:11px}
+.hero>.voice-feedback{margin:6px auto -5px}
 .voice-feedback[data-state="listening"]{color:#a15348;font-weight:550}
 .voice-feedback[data-state="listening"] .voice-status:before{content:"";display:inline-block;width:7px;height:7px;margin-right:6px;border-radius:50%;background:#c5675d;animation:voice-pulse 1s ease-in-out infinite}
 .voice-confirm{border:1px solid #dfe4da;background:#eef1e9;color:#435747;border-radius:20px;padding:6px 11px;font-size:11px;font-weight:600}
@@ -206,3 +207,37 @@ html[data-background="white"] .ledger-view-switch button.active{background:#fff!
   .rule-start-category-grid .form-field{margin:9px 0}
   .rule-start-category-grid input[type="date"]{width:100%;min-width:0;max-width:100%}
 }
+
+/* v48: make native iOS date fields match every other full-width form control. */
+.date-field{display:block;width:100%;min-width:0;max-width:100%;overflow:hidden}
+.form-field .date-control{
+  -webkit-appearance:none;
+  appearance:none;
+  display:block;
+  box-sizing:border-box;
+  inline-size:100%!important;
+  width:100%!important;
+  min-inline-size:0!important;
+  min-width:0!important;
+  max-inline-size:100%!important;
+  max-width:100%!important;
+  block-size:48px;
+  height:48px;
+  margin:0;
+}
+#preview-form .form-field,#rule-form .rule-start-category-grid{width:100%;min-width:0;max-width:100%}
+@media(max-width:520px){
+  .rule-start-category-grid{display:block;width:100%}
+  .rule-start-category-grid .form-field{width:100%;margin:11px 0}
+  #preview-form .date-field,#rule-form .date-field{overflow:hidden}
+}
+
+/* v49: gift artwork and centered, integrated Kitty props. */
+.avatar:has(.category-held-cat),.avatar:has(.category-gift-life){overflow:visible;background:transparent;border-radius:0}
+.category-held-cat{width:40px;height:40px;display:block;position:relative}
+.category-held-cat>.category-cat-icon{position:absolute;inset:0;width:40px;height:40px;z-index:0}
+.category-held-cat>i{position:absolute;left:50%;bottom:-1px;transform:translateX(-50%);display:block;width:28px;height:23px;background:transparent;font-style:normal;z-index:2;filter:drop-shadow(0 1px 1px rgba(74,61,51,.1))}
+.category-held-cat>i svg{display:block;width:100%;height:100%}
+.category-held-cat-gift>i{width:27px;height:23px}
+.category-held-cat-computer>i{width:29px;height:23px}
+.category-gift-life{display:block;width:38px;height:38px;filter:drop-shadow(0 1px 2px rgba(85,65,50,.08))}
