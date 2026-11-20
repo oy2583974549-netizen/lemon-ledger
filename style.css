@@ -199,3 +199,10 @@ html[data-background="white"] .ledger-view-switch button.active{background:#fff!
 .budget-progress{position:relative;overflow:visible}
 .budget-progress span{position:relative}
 .budget-progress span:after{content:"";position:absolute;right:-13px;top:50%;width:27px;height:27px;transform:translateY(-50%);background:url('./lemon-transparent.png') center/contain no-repeat;filter:drop-shadow(0 2px 3px rgba(70,54,18,.18));z-index:2;pointer-events:none}
+
+/* v47: keep native iOS date controls clear of the category selector. */
+@media(max-width:480px){
+  .rule-start-category-grid{grid-template-columns:1fr;gap:0}
+  .rule-start-category-grid .form-field{margin:9px 0}
+  .rule-start-category-grid input[type="date"]{width:100%;min-width:0;max-width:100%}
+}
